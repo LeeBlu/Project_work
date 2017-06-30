@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2C341525-A1AF-4BFA-91E3-B1764124FB4B}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{0C88C7F0-F046-448F-8B20-7E6DA39F9039}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataBase_CodeFirst</RootNamespace>
-    <AssemblyName>DataBase_CodeFirst</AssemblyName>
+    <RootNamespace>DataLayer_2</RootNamespace>
+    <AssemblyName>DataLayer_2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,8 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,7 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Model\Address.cs" />
+    <Compile Include="Model\AddressType.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Department.cs" />
+    <Compile Include="Model\Gender.cs" />
+    <Compile Include="Model\namepsacec.cs" />
+    <Compile Include="Model\Province.cs" />
+    <Compile Include="Model\RegisteredUser.cs" />
+    <Compile Include="Model\Status.cs" />
+    <Compile Include="Model\Surbub.cs" />
+    <Compile Include="Model\Town.cs" />
+    <Compile Include="Model\UserAddress.cs" />
+    <Compile Include="Model\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

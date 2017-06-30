@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace DataBase_CodeFirst.Models
 {
-    class AddressType
+   public class AddressType
     {
        [Key]
         public int AddressTypeID { get; set; }
 
         public string AddressTypeDecs { get; set; }
+        public ICollection<Address> addresses { get; set; }
     }
 }

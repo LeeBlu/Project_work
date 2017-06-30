@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace DataBase_CodeFirst.Models
 {
-    class Town
+    public class Town
     {
         [Key]
         public int TownID { get; set; }
+
         public string TownName { get; set; }
-      //  public virtual Province province { get; set; }
+
+        public virtual Province province { get; set; }
+        public ICollection<Surbub> surbub { get; set; }
     }
 }

@@ -11,5 +11,10 @@ namespace DataBase_CodeFirst.Models
 {
   public  class Status
     {
+        [Key]
+        public int StatusID { get; set; }
+
+        public string StatusDesc { get; set; }
+        public ICollection<RegisteredUser> users { get; set; }
     }
 }

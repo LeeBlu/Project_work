@@ -11,5 +11,11 @@ namespace DataBase_CodeFirst.Models
 {
    public class UserType
     {
+        [Key]
+        public int UserTypeID { get; set; }
+
+        public string UserDescribtion { get; set; }
+
+        public ICollection<RegisteredUser> users { get; set; }
     }
 }

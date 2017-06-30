@@ -10,16 +10,24 @@ using DataBase_CodeFirst.Models;
 
 namespace DataBase_CodeFirst.Models
 {
-    [Table("Addresses")]
-    public class Addreses
+   
+    public class Address
     {
-        public Guid AddressID { get; set; }
+        [Key]
+        public int AddressID { get; set; }
+
         public string UnitNumber { get; set; }
+
         public string StreetName { get; set; }
+
         public string PostalAddress { get; set; }
-        // foreign key 
-        public Guid AddressTypeID { get; set; }
-        public AddressType AddressTypes { get; set; }
+
+        public virtual AddressType Addresstype { get; set; }
+
+        public virtual Surbub sub { get; set; }
+
+        public UserAddress useraddress { get; set; }
+
 
 
     }

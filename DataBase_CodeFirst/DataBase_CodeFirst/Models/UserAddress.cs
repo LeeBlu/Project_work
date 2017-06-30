@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataBase_CodeFirst.Models
 {
-    class UserAddress
+    public class UserAddress
     {
-        //public virtual ICollection<RegisterdUser> user { get; set; }
-       // public virtual ICollection<Address> address { get; set; }
+        public virtual ICollection<RegisteredUser> user { get; set; }
+
+        public virtual ICollection<Address> address { get; set; }
     }
 }

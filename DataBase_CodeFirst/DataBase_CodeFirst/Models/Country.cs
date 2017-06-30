@@ -12,5 +12,7 @@ namespace DataBase_CodeFirst.Models
         [Key]
         public int CountryID { get; set; }
         public string CountryName { get; set; }
+
+        public ICollection<Province> provinces { get; set; }
     }
 }

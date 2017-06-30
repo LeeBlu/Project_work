@@ -9,13 +9,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataBase_CodeFirst.Models
 {
-    [Table("")]
- public   class Department
+ 
+ public class Department
     {
 
-        [Key()]
-        public Guid DeparmentID { get; set; }
+        [Key]
+        public int DepartmentID { get; set; }
+
         public string DepartmentName { get; set; }
-        public string DepartmesntDescrption { get; set; }
+
+        public string DepartmentDescrption { get; set; }
+
+        public ICollection<RegisteredUser> users { get; set; }
     }
 }

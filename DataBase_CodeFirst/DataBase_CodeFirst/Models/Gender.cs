@@ -10,10 +10,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DataBase_CodeFirst.Models
 {
 
-  public  class Gender
+  public class Gender
     {
-        [Key()]
-        public Guid GenderID { get; set; }
+        [Key]
+        public int GenderID { get; set; }
+
         public string GenderDescription { get; set; }
+
+        public ICollection<RegisteredUser> users { get; set; }
     }
 }

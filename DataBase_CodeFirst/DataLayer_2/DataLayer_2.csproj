@@ -50,12 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ContextFolder\TableContext.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\AddressType.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Gender.cs" />
-    <Compile Include="Model\namepsacec.cs" />
     <Compile Include="Model\Province.cs" />
     <Compile Include="Model\RegisteredUser.cs" />
     <Compile Include="Model\Status.cs" />

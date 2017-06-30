@@ -53,6 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AddressType.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\Surbub.cs" />
+    <Compile Include="Models\Town.cs" />
+    <Compile Include="Models\UserAddress.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

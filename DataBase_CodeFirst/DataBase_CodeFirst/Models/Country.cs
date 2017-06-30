@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataBase_CodeFirst.Models
 {
-    class Country
+  public  class Country
     {
         [Key]
         public int CountryID { get; set; }

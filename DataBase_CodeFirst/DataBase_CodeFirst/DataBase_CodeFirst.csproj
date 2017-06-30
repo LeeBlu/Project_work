@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Entity.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,12 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Addreses.cs" />
     <Compile Include="Models\AddressType.cs" />
     <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Province.cs" />
+    <Compile Include="Models\RegisteredUser.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Surbub.cs" />
     <Compile Include="Models\Town.cs" />
     <Compile Include="Models\UserAddress.cs" />
+    <Compile Include="Models\UserType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

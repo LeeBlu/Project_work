@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer_2.ContextFolder
 {
-    class TableContext :DbContext
+   public  class TableContext :DbContext
     {
         public DbSet<Department> departments { get; set; }
 
@@ -34,6 +34,6 @@ namespace DataLayer_2.ContextFolder
 
         public DbSet<Status> statuses { get; set; }
 
-
+        
     }
 }

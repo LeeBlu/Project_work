@@ -20,6 +20,6 @@ namespace DataLayer_2.Model
 
         public string DepartmentDescrption { get; set; }
 
-        public ICollection<RegisteredUser> users { get; set; }
+        public virtual ICollection<RegisteredUser> users { get; set; }
     }
 }

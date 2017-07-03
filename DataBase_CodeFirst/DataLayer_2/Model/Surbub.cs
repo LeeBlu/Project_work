@@ -15,6 +15,6 @@ namespace DataLayer_2.Model
         public string SuburbName { get; set; }
 
         public virtual Town town { get; set; }
-        public ICollection<Address> addresses { get; set; }
+        public virtual ICollection<Address> addresses { get; set; }
     }
 }

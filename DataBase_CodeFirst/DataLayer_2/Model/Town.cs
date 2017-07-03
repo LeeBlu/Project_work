@@ -15,6 +15,6 @@ namespace DataLayer_2.Model
         public string TownName { get; set; }
 
         public virtual Province province { get; set; }
-        public ICollection<Surbub> surbub { get; set; }
+        public virtual  ICollection<Surbub> surbub { get; set; }
     }
 }

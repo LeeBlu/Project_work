@@ -13,6 +13,6 @@ namespace DataLayer_2.Model
         public int AddressTypeID { get; set; }
 
         public string AddressTypeDecs { get; set; }
-        public ICollection<Address> addresses { get; set; }
+        public virtual ICollection<Address> addresses { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace DataLayer_2.Model
         public int CountryID { get; set; }
         public string CountryName { get; set; }
 
-        public ICollection<Province> provinces { get; set; }
+        public virtual ICollection<Province> provinces { get; set; }
     }
 }

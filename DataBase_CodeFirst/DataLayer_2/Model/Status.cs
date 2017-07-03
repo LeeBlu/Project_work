@@ -15,6 +15,6 @@ namespace DataLayer_2.Model
         public int StatusID { get; set; }
 
         public string StatusDesc { get; set; }
-        public ICollection<RegisteredUser> users { get; set; }
+        public virtual ICollection<RegisteredUser> users { get; set; }
     }
 }

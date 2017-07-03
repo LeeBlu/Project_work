@@ -16,6 +16,6 @@ namespace DataLayer_2.Model
 
         public virtual Country country { get; set; }
 
-        public ICollection<Town> towns { get; set; }
+        public virtual ICollection<Town> towns { get; set; }
     }
 }

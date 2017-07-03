@@ -25,10 +25,10 @@ namespace DataLayer_2.Model
 
         public bool IsDeleted { get; set; }
 
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
 
-        public Gender Gender { get; set; }
+        public virtual Gender Gender { get; set; }
 
-        public Status Status { get; set; }
+        public virtual Status Status { get; set; }
     }
 }

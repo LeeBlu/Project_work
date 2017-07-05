@@ -53,14 +53,20 @@ namespace DataBase_CodeFirst.Operations
 
         public void UpdateAddress(int id, Address upadd)
         {
-            //using (var db =new TableContext())
-            //{
-            //    var readdress = db.addresse.Find(id);
-            //    if (readdress!=null)
-            //    {
-            //        db.addresse.
-            //    }
-            //}
+            using (var db = new TableContext())
+            {
+                
+                    var readdress = db.addresse.Find(id);
+                
+                    if (readdress != null)
+                    {
+                        readdress = upadd;
+                        db.Entry(readdress).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+               
+             
+            }
         }
 
     }

@@ -9,5 +9,11 @@ namespace DataBase_CodeFirst.Operations
 
     class UserOps
     {
+        public string AddUser()
+        {
+
+            return "User was added";
+        }
+
     }
 }

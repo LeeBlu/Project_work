@@ -1,7 +1,7 @@
 ﻿using DataLayer_2.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +10,11 @@ namespace DataLayer_2.ContextFolder
 {
    public  class TableContext :DbContext
     {
+
+        //public TableContext():base("newdatabase")
+        //{
+
+        //}
         public DbSet<Department> department { get; set; }
 
         public DbSet<RegisteredUser> Ruser { get; set; }

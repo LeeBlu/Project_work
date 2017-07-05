@@ -51,9 +51,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ContextFolder\TableContext.cs" />
-    <Compile Include="Migrations\201707050724378_Seed2.cs" />
-    <Compile Include="Migrations\201707050724378_Seed2.Designer.cs">
-      <DependentUpon>201707050724378_Seed2.cs</DependentUpon>
+    <Compile Include="Migrations\201707050848373_newdb.cs" />
+    <Compile Include="Migrations\201707050848373_newdb.Designer.cs">
+      <DependentUpon>201707050848373_newdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Address.cs" />
@@ -74,8 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707050724378_Seed2.resx">
-      <DependentUpon>201707050724378_Seed2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707050848373_newdb.resx">
+      <DependentUpon>201707050848373_newdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

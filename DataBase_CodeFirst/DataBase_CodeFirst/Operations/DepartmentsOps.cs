@@ -32,6 +32,16 @@ namespace DataBase_CodeFirst.Operations
             }
         }
 
+        public List<Department> GetAllDep()
+        {
+            using (var db =new TableContext())
+            {
+                return db.department.ToList();
+            }
+            
+        }
+
+
         public string DeleteDepartment(int id)
         {
             using (var db =new TableContext())

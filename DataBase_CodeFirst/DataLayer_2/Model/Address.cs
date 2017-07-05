@@ -26,7 +26,7 @@ namespace DataLayer_2.Model
 
         public virtual Surbub sub { get; set; }
 
-        public virtual UserAddress useraddress { get; set; }
+        public virtual ICollection<RegisteredUser> user { get; set; }
 
 
 

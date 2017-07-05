@@ -9,7 +9,7 @@ namespace DataBase_CodeFirst
 {
     class Program
     {
-        TableContext db = new TableContext();
+      
         static void Main(string[] args)
         {
 

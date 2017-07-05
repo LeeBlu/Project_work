@@ -29,6 +29,7 @@ namespace DataLayer_2.Model
 
         public virtual Gender Gender { get; set; }
 
+        public virtual UserType usertype { get; set; }
         public virtual Status Status { get; set; }
         public virtual ICollection<Address> address { get; set; }
     }

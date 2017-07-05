@@ -13,15 +13,24 @@ namespace DataBase_CodeFirst
     {
         static DepartmentsOps p = new DepartmentsOps();
         static Department d = new Department();
+        static RegisteredUser us = new RegisteredUser();
+        static UserOps usp = new UserOps();
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter Department name");
-            d.DepartmentName = Console.ReadLine();
-            Console.WriteLine("Enter department description");
-            d.DepartmentDescrption = Console.ReadLine();
+            Console.WriteLine("Enter  name");
+            us.FirstName = Console.ReadLine();
+            Console.WriteLine("Enter  surname");
+            us.LastName = Console.ReadLine();
+            Console.WriteLine("Enter email");
+            us.EmailAddress = Console.ReadLine();
+            Console.WriteLine("Enter password");
+            us.Password =Console.ReadLine();
+
+
+            // d.DepartmentDescrption = Console.ReadLine();
            
-            Console.WriteLine(p.InsertDepartment(d));
+            Console.WriteLine(usp.AddUser(us, 1, 1));
             Console.ReadKey(); 
         }
 

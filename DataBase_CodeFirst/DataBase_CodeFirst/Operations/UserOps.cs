@@ -31,5 +31,55 @@ namespace DataBase_CodeFirst.Operations
             return "User was added";
         }
 
+        public string UpdateUser(int id)
+        {
+            using (var db =new TableContext())
+            {
+
+            }
+            return "user was updated";
+        }
+
+        public string DeleteUser(int id)
+        {
+            using (var db = new TableContext())
+            {
+                var tempuser = db.Ruser.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                tempuser.IsDeleted = true;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+
+            return "User was deleted";
+        }
+
+        public string ActivateUser(int id)
+        {
+
+            using (var db =new TableContext())
+            {
+                var st = db.statuse.Find(1);
+                var tempuser = db.Ruser.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                tempuser.Status=st;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            return "User was Activated";
+        }
+
+        public string DeactivateUser(int id)
+        {
+
+            using (var db = new TableContext())
+            {
+                var st = db.statuse.Find(2);
+                var tempuser = db.Ruser.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                tempuser.Status = st;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            return "User was Deactivated";
+        }
+
     }
 }

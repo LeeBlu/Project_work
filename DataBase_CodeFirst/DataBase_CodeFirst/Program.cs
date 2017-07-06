@@ -18,19 +18,19 @@ namespace DataBase_CodeFirst
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter  name");
-            us.FirstName = Console.ReadLine();
-            Console.WriteLine("Enter  surname");
-            us.LastName = Console.ReadLine();
-            Console.WriteLine("Enter email");
-            us.EmailAddress = Console.ReadLine();
-            Console.WriteLine("Enter password");
-            us.Password =Console.ReadLine();
+            //Console.WriteLine("Enter  name");
+            //us.FirstName = Console.ReadLine();
+            //Console.WriteLine("Enter  surname");
+            //us.LastName = Console.ReadLine();
+            //Console.WriteLine("Enter email");
+            //us.EmailAddress = Console.ReadLine();
+            //Console.WriteLine("Enter password");
+            //us.Password =Console.ReadLine();
 
 
             // d.DepartmentDescrption = Console.ReadLine();
            
-            Console.WriteLine(usp.AddUser(us, 1, 1));
+            Console.WriteLine(usp.DeleteUser(1));
             Console.ReadKey(); 
         }
 

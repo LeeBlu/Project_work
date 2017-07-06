@@ -31,10 +31,14 @@ namespace DataBase_CodeFirst.Operations
             return "User was added";
         }
 
-        public string UpdateUser(int id)
+        public string UpdateUser(int id, RegisteredUser upuser)
         {
             using (var db =new TableContext())
             {
+                var tempuser = db.Ruser.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                tempuser = upuser;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
 
             }
             return "user was updated";

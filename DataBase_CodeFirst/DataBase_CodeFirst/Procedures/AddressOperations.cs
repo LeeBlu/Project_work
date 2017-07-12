@@ -18,10 +18,10 @@ namespace DataBase_CodeFirst.Procedures
             {
                 var person = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
                 var type = db.addresstypes.Find(addtype);
-                addres.Addresstype = type;
+                addres.Addresstypes = type;
                 var sub = db.surbubs.Find(subid);
                 addres.sub = sub;
-                addres.user = user;
+                addres.RegisteredUsers = user;
                 db.addresses.Add(addres);
                 db.SaveChanges();
 
@@ -30,4 +30,27 @@ namespace DataBase_CodeFirst.Procedures
 
 
         }
+
+        public void UpdateAddress(int id, Address upadd)
+        {
+            using (var db = new TableContext())
+            {
+
+                var readdress = db.addresses.Find(id);
+
+                if (readdress != null)
+                {
+                    readdress = upadd;
+                    db.Entry(readdress).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+
+            }
+        }
+
+
+
+
     }
+}

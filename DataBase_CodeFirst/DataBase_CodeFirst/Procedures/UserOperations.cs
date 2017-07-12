@@ -16,6 +16,21 @@ namespace DataBase_CodeFirst.Procedures
             {
                 try
                 {
+                    
+                    var tempstatus = db.statuses.Find(2);
+                    var tempGender = db.Genders.Find(gid);
+                    var tempdep = db.departments.Find(depId);
+                    var temptype = db.Usertypes.Find(2);
+                    user.IsDeleted = false;
+                    user.Status = tempstatus;
+
+                    user.Department = tempdep;
+                    user.UserTypes = temptype;
+                    user.Gender = tempGender;
+                    db.Rusers.Add(user);
+                    db.SaveChanges();
+
+
 
                     return "User was added";
                 }
@@ -29,6 +44,16 @@ namespace DataBase_CodeFirst.Procedures
 
         public string UpdateUser(int id, RegisteredUser updateinfo)
         {
+            using (var db = new TableContext())
+            {
+                var tempuser = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                tempuser = updateinfo;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+            }
+            return "user was updated";
+
 
         }
 

@@ -50,13 +50,13 @@ namespace DataBase_CodeFirst.Procedures
 
         }
 
-        public void UserToUpdate(int UserID, string Username, string Surname, string Email, string Password, int userDeptId, int userGenderId, int usertypeId, int StatusID)
+        public void UserToUpdate(int UserID, RegisteredUser us)
         {
             var db = new TableContext();
             var OrginalInfo = db.Rusers.Find(UserID);
 
             OrginalInfo.RegisteredUserID = UserID;
-            OrginalInfo.FirstName = Username;
+            OrginalInfo.FirstName = us.FirstName;
             OrginalInfo.LastName = Surname;
             OrginalInfo.EmailAddress = Email;
             OrginalInfo.Password = Password;
@@ -69,13 +69,9 @@ namespace DataBase_CodeFirst.Procedures
 
             Console.WriteLine("New user has been created ");
             Console.ReadKey();
-
-
-
-
-
-
-
         }
+
+
+
     }
 }

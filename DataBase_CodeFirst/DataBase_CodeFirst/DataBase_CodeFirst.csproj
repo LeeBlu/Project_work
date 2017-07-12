@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Procedures\AdDepartment.cs" />
+    <Compile Include="Procedures\AddressOperations.cs" />
     <Compile Include="Procedures\InsertUser.cs" />
     <Compile Include="Procedures\UpdatedUser.cs" />
     <Compile Include="Procedures\UserOperations.cs" />

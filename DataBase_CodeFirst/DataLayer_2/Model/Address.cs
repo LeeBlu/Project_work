@@ -20,14 +20,19 @@ namespace DataLayer_2.Model
 
         public string StreetName { get; set; }
 
-        public string PostalAddress { get; set; }
+        public string ComplexNumber { get; set; }
 
-         public int Surbub { get; set; }
-
+        public int SurbubID { get; set; }
         public int RegisteredUserID { get; set; }
         public int AddressTypeID { get; set; }
+
+        [ForeignKey("SurbubID")]
         public virtual Surbub sub { get; set; }
+
+        [ForeignKey("AddressTypeID")]
         public virtual AddressType Addresstypes { get; set; }
+
+        [ForeignKey("RegisteredUserID")]
         public virtual RegisteredUser RegisteredUsers { get; set; }
 
 

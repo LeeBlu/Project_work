@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Procedures\AdDepartment.cs" />
     <Compile Include="Procedures\InsertUser.cs" />
+    <Compile Include="Procedures\UpdatedUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

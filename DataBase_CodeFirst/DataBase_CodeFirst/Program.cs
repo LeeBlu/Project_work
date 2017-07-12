@@ -18,8 +18,11 @@ namespace DataBase_CodeFirst
         static void Main(string[] args)
         {
 
-            var _objInsertUser = new InsertUser();
-            _objInsertUser.EnterUser();
+            var _ObjUpdateUser = new UpdatedUser();
+            _ObjUpdateUser.Update();
+
+            //var _objInsertUser = new InsertUser();
+            //_objInsertUser.EnterUser();
 
             //var _ObjDeptINs = new AdDepartment();
             //_ObjDeptINs.AddDepart();

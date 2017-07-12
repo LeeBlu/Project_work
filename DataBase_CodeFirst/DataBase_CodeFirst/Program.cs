@@ -17,15 +17,16 @@ namespace DataBase_CodeFirst
         TableContext db = new TableContext();
         static void Main(string[] args)
         {
-
+            
             var _ObjUpdateUser = new UpdatedUser();
             _ObjUpdateUser.Update();
 
-            //var _objInsertUser = new InsertUser();
-            //_objInsertUser.EnterUser();
+            
+            var _objInsertUser = new InsertUser();
+            _objInsertUser.EnterUser();
 
-            //var _ObjDeptINs = new AdDepartment();
-            //_ObjDeptINs.AddDepart();
+            var _ObjDeptINs = new AdDepartment();
+            _ObjDeptINs.AddDepart();
 
         }
 

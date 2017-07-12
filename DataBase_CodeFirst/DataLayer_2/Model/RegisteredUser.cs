@@ -35,5 +35,6 @@ namespace DataLayer_2.Model
 
         public virtual Status Status { get; set; }
          public virtual UserType UserTypes { get; set; }
+        public ICollection<Address> Addresses { get; set; }
     }
 }

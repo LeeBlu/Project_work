@@ -13,40 +13,60 @@ namespace DataBase_CodeFirst.Procedures
         public string InsertAddress(Address addres, int id, int addtype, int subid)
         {
             RegisteredUser user = new RegisteredUser();
-
-            using (var db = new TableContext())
+            try
             {
-                var person = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
-                var type = db.addresstypes.Find(addtype);
-                addres.Addresstypes = type;
-                var sub = db.surbubs.Find(subid);
-                addres.sub = sub;
-                addres.RegisteredUsers = user;
-                db.addresses.Add(addres);
-                db.SaveChanges();
+                using (var db = new TableContext())
+                {
+                    var person = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                    var type = db.addresstypes.Find(addtype);
+                    addres.Addresstypes = type;
+                    var sub = db.surbubs.Find(subid);
+                    addres.sub = sub;
+                    addres.RegisteredUsers = user;
+                    db.addresses.Add(addres);
+                    db.SaveChanges();
 
+                }
+                return "address was added";
             }
-            return "address was added";
+            catch (Exception ex)
+            {
+
+                return ex.Message;
+            }
+          
 
 
         }
 
-        public void UpdateAddress(int id, Address upadd)
+        public string UpdateAddress(int id, Address upadd)
         {
             using (var db = new TableContext())
             {
-
                 var readdress = db.addresses.Find(id);
 
-                if (readdress != null)
+                try
                 {
-                    readdress = upadd;
-                    db.Entry(readdress).State = System.Data.Entity.EntityState.Modified;
-                    db.SaveChanges();
+
+                    if (readdress != null)
+                    {
+                        readdress = upadd;
+                        db.Entry(readdress).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                      
+                    }
+                    return "address was updated";
                 }
+                catch (Exception ex)
+                {
+
+                    return ex.Message;
+                }
+               
 
 
-            }
+
+        }
         }
 
 

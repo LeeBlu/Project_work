@@ -15,6 +15,10 @@ namespace DataLayer_2.Model
         public int StatusID { get; set; }
 
         public string StatusDesc { get; set; }
+
+        public int RegisteredUserID { get; set; }
+
+        [ForeignKey("RegisteredUser")]
         public virtual ICollection<RegisteredUser> users { get; set; }
     }
 }

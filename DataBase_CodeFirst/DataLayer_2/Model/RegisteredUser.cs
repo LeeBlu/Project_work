@@ -24,17 +24,27 @@ namespace DataLayer_2.Model
         public string Password { get; set; }
 
         public bool IsDeleted { get; set; }
+
+
         public int DepartmentID { get; set; }
         public int GenderID { get; set; }
         public int StatusID { get; set; }
         public int UserTypeID { get; set; }
+        public int AddressID { get; set; }
 
+        [ForeignKey("DepartmentID")]
         public virtual Department Department { get; set; }
 
+        [ForeignKey("GenderID")]
         public virtual Gender Gender { get; set; }
 
+        [ForeignKey("StatusID")]
         public virtual Status Status { get; set; }
-         public virtual UserType UserTypes { get; set; }
+
+        [ForeignKey("UserTypeID")]
+        public virtual UserType UserTypes { get; set; }
+
+        [ForeignKey("AddressID")]
         public ICollection<Address> Addresses { get; set; }
     }
 }

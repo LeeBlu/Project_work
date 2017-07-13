@@ -16,6 +16,9 @@ namespace DataLayer_2.Model
 
         public string UserDescribtion { get; set; }
 
+        public int RegisteredUserID { get; set; }
+
+        [ForeignKey("RegisteredUserID")]
         public virtual ICollection<RegisteredUser> users { get; set; }
     }
 }

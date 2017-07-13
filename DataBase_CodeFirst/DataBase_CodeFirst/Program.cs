@@ -25,7 +25,7 @@ namespace DataBase_CodeFirst
       
         static void Main(string[] args)
         {
-            int gid, depid,addtype;
+            int gid, depid,addtype,userid;
 
             //Output Instructions for User 
             Console.WriteLine("Register ...press 1");
@@ -78,11 +78,36 @@ namespace DataBase_CodeFirst
             }
             else if (op==3)//Enter update user Information 
             {
-                userOps.UpdateUser();
+                Console.WriteLine("Enter userid");
+                userid=Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter Firstname");
+                user.FirstName = Console.ReadLine();
+                Console.WriteLine("Enter Lastname");
+                user.LastName = Console.ReadLine();
+                Console.WriteLine("Enter email");
+                user.EmailAddress = Console.ReadLine();
+                Console.WriteLine("Enter Password");
+                user.Password = Console.ReadLine();
+
+                Console.WriteLine(userOps.UpdateUser(userid,user));
             }
             else if (op==4)//Enter update address information
             {
-                addressOps.UpdateAddress();
+                Console.WriteLine("Enter userid");
+                userid = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter UnitNumber");
+                addr.UnitNumber = Console.ReadLine();
+                Console.WriteLine("Enter StreetName");
+                addr.StreetName = Console.ReadLine();
+                Console.WriteLine("Enter ComplexNumber");
+                addr.ComplexNumber = Console.ReadLine();
+
+                Console.WriteLine("Enter UserId");
+                addr.RegisteredUserID = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine("Enter address typeid..press 1 for physcal address.. press 2 for postal address");
+                addtype = Convert.ToInt16(Console.ReadLine());
+                addressOps.UpdateAddress(userid,addr);
             }
             
         }

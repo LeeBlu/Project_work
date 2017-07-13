@@ -10,13 +10,13 @@ namespace DataBase_CodeFirst.Procedures
 {
     class UserOperations
     {
-        public string AddUser(RegisteredUser user ,int depId,int gid)
+        public string AddUser(RegisteredUser user, int depId, int gid)
         {
-            using (var db =new TableContext())
+            using (var db = new TableContext())
             {
                 try
                 {
-                    
+
                     var tempstatus = db.statuses.Find(2);
                     var tempGender = db.Genders.Find(gid);
                     var tempdep = db.departments.Find(depId);
@@ -84,46 +84,40 @@ namespace DataBase_CodeFirst.Procedures
             }
             return "User was Deactivated";
         }
-        
+
         public void UserInfo()
         {
             using (var db = new TableContext())
 
             {
                 var UserInfomation = from us in db.Rusers
-                               join b in db.addresses
-                               on us.RegisteredUserID equals b.RegisteredUserID
-                               join g in db.Genders on us.GenderID equals g.GenderID
-                               join d in db.departments on us.DepartmentID equals d.DepartmentID 
+                                     join b in db.addresses
+                                     on us.RegisteredUserID equals b.RegisteredUserID
+                                     join g in db.Genders on us.GenderID equals g.GenderID
+                                     join d in db.departments on us.DepartmentID equals d.DepartmentID
 
-                               select new
-                               {
-                                   firstname = us.FirstName,
-                                   lastname = us.LastName,
-                                   strName = b.StreetName,
-                                   untNo = b.UnitNumber,
-                                   Sex = g.GenderDescription,
-                                   DepName = d.DepartmentName,
-                                   DepDesc = d.DepartmentDescrption
+                                     select new
+                                     {
+                                         firstname = us.FirstName,
+                                         lastname = us.LastName,
+                                         strName = b.StreetName,
+                                         untNo = b.UnitNumber,
+                                         Sex = g.GenderDescription,
+                                         DepName = d.DepartmentName,
+                                         DepDesc = d.DepartmentDescrption
 
-                               };
+                                     };
                 foreach (var item in UserInfomation)
                 {
-                    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}",item.firstname,item.lastname,item.strName,item.untNo,item.Sex,item.DepName,item.DepDesc);
-                    
+                    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}", item.firstname, item.lastname, item.strName, item.untNo, item.Sex, item.DepName, item.DepDesc);
+
                 }
                 Console.ReadLine();
             }
 
-           
-
-            }
-           
-
-
-
         }
->>>>>>> Stashed changes
 
     }
-}
+
+ }
+

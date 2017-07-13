@@ -20,11 +20,12 @@ namespace DataBase_CodeFirst
          static public UserOperations userOps = new UserOperations();
          static public AddressOperations addressOps = new AddressOperations();
          static public RegisteredUser user = new RegisteredUser();
+         static public Address addr = new Address();
 
       
         static void Main(string[] args)
         {
-            int gid, depid;
+            int gid, depid,addtype;
 
             //Output Instructions for User 
             Console.WriteLine("Register ...press 1");
@@ -60,7 +61,20 @@ namespace DataBase_CodeFirst
 
             else if (op==2)//Enter Address information
             {
-                addressOps.InsertAddress();
+                Console.WriteLine("Enter UnitNumber");
+                addr.UnitNumber = Console.ReadLine();
+                Console.WriteLine("Enter StreetName");
+                addr.StreetName = Console.ReadLine();
+                Console.WriteLine("Enter ComplexNumber");
+                addr.ComplexNumber = Console.ReadLine();
+              
+                Console.WriteLine("Enter UserId");
+                addr.RegisteredUserID = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine("Enter address typeid..press 1 for physcal address.. press 2 for postal address");
+                addtype=Convert.ToInt16(Console.ReadLine());
+
+               Console.WriteLine(addressOps.InsertAddress(addr,addr.RegisteredUserID, addtype, 1));
             }
             else if (op==3)//Enter update user Information 
             {

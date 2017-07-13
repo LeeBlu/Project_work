@@ -84,10 +84,46 @@ namespace DataBase_CodeFirst.Procedures
             }
             return "User was Deactivated";
         }
+        
+        public void UserInfo()
+        {
+            using (var db = new TableContext())
 
-        //public RegisteredUser UserInfo(int id)
-        //{
-        //}
+            {
+                var UserInfomation = from us in db.Rusers
+                               join b in db.addresses
+                               on us.RegisteredUserID equals b.RegisteredUserID
+                               join g in db.Genders on us.GenderID equals g.GenderID
+                               join d in db.departments on us.DepartmentID equals d.DepartmentID 
+
+                               select new
+                               {
+                                   firstname = us.FirstName,
+                                   lastname = us.LastName,
+                                   strName = b.StreetName,
+                                   untNo = b.UnitNumber,
+                                   Sex = g.GenderDescription,
+                                   DepName = d.DepartmentName,
+                                   DepDesc = d.DepartmentDescrption
+
+                               };
+                foreach (var item in UserInfomation)
+                {
+                    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}",item.firstname,item.lastname,item.strName,item.untNo,item.Sex,item.DepName,item.DepDesc);
+                    
+                }
+                Console.ReadLine();
+            }
+
+           
+
+            }
+           
+
+
+
+        }
+>>>>>>> Stashed changes
 
     }
 }

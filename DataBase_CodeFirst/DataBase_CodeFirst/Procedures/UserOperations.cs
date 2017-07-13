@@ -85,9 +85,9 @@ namespace DataBase_CodeFirst.Procedures
             return "User was Deactivated";
         }
 
-        public RegisteredUser UserInfo(int id)
-        {
-        }
+        //public RegisteredUser UserInfo(int id)
+        //{
+        //}
 
     }
 }

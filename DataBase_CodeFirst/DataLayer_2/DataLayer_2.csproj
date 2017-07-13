@@ -51,6 +51,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ContextFolder\TableContext.cs" />
+    <Compile Include="Migrations\201707131153444_Build.cs" />
+    <Compile Include="Migrations\201707131153444_Build.Designer.cs">
+      <DependentUpon>201707131153444_Build.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\AddressType.cs" />
     <Compile Include="Model\Country.cs" />
@@ -67,6 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707131153444_Build.resx">
+      <DependentUpon>201707131153444_Build.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

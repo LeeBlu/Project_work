@@ -42,6 +42,15 @@ new Model.Country { CountryName = "South Africa" });
                 new Model.Province { ProvinceName = "Northern Cape", country = c },
                 new Model.Province { ProvinceName = "North West", country = c });
 
+            Model.Town t1 = new Model.Town { TownName = "Joburg", ProvinceID = 1 };
+
+            context.towns.AddOrUpdate(t1);
+            
+            context.surbubs.AddOrUpdate(
+                new Model.Surbub {SuburbName="Hyde Park" ,town = t1}
+                );
+
+
             context.Genders.AddOrUpdate(
                 new Model.Gender { GenderDescription = "Male" },
                 new Model.Gender { GenderDescription = "Female" });

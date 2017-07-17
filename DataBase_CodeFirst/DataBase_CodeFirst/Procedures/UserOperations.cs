@@ -39,16 +39,42 @@ namespace DataBase_CodeFirst.Procedures
                     return ex.Message;
                 }
             }
-
+            //
         }
 
         public string UpdateUser(int id, RegisteredUser updateinfo)
         {
+            RegisteredUser temp = new RegisteredUser();
             using (var db = new TableContext())
             {
                 var tempuser = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
-                tempuser = updateinfo;
-                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                temp = tempuser ;
+
+                if (updateinfo.EmailAddress != "")
+                {
+                    temp.EmailAddress = updateinfo.EmailAddress;
+                }
+
+               if (updateinfo.FirstName!="")
+                {
+                    temp.FirstName = updateinfo.FirstName;
+                }
+
+                if (updateinfo.LastName != "")
+                {
+                    temp.LastName = updateinfo.LastName;
+                }
+    
+
+                if (updateinfo.Password!="")
+                {
+                    temp.Password = updateinfo.Password;
+                }
+        
+
+
+              
+                db.Entry(temp).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
 
             }
@@ -116,6 +142,7 @@ namespace DataBase_CodeFirst.Procedures
             }
 
         }
+        
 
     }
 

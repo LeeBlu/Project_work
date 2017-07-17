@@ -55,6 +55,14 @@
     <Compile Include="Migrations\201707131153444_Build.Designer.cs">
       <DependentUpon>201707131153444_Build.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707140720235_Seed3.cs" />
+    <Compile Include="Migrations\201707140720235_Seed3.Designer.cs">
+      <DependentUpon>201707140720235_Seed3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707140732363_Seed4.cs" />
+    <Compile Include="Migrations\201707140732363_Seed4.Designer.cs">
+      <DependentUpon>201707140732363_Seed4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\AddressType.cs" />
@@ -76,6 +84,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707131153444_Build.resx">
       <DependentUpon>201707131153444_Build.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707140720235_Seed3.resx">
+      <DependentUpon>201707140720235_Seed3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707140732363_Seed4.resx">
+      <DependentUpon>201707140732363_Seed4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

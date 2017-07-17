@@ -107,8 +107,13 @@ namespace DataBase_CodeFirst
 
                 Console.WriteLine("Enter address typeid..press 1 for physcal address.. press 2 for postal address");
                 addtype = Convert.ToInt16(Console.ReadLine());
-                addressOps.UpdateAddress(userid,addr);
+                Console.WriteLine(addressOps.UpdateAddress(userid,addr));
             }
+            else if(op==5)
+            {
+                userOps.UserInfo();
+            }
+            Console.ReadKey();
             
         }
 

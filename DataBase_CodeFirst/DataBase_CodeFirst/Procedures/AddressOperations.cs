@@ -12,7 +12,7 @@ namespace DataBase_CodeFirst.Procedures
     {
         public string InsertAddress(Address addres, int id, int addtype, int subid)
         {
-            RegisteredUser user = new RegisteredUser();
+            //RegisteredUser user = new RegisteredUser();
             try
             {
                 using (var db = new TableContext())
@@ -22,7 +22,7 @@ namespace DataBase_CodeFirst.Procedures
                     addres.Addresstypes = type;
                     var sub = db.surbubs.Find(subid);
                     addres.sub = sub;
-                    addres.RegisteredUsers = user;
+                    addres.RegisteredUsers = person;
                     db.addresses.Add(addres);
                     db.SaveChanges();
 
@@ -41,20 +41,49 @@ namespace DataBase_CodeFirst.Procedures
 
         public string UpdateAddress(int id, Address upadd)
         {
+            Address tempaddress = new Address();
+
             using (var db = new TableContext())
             {
                 var readdress = db.addresses.Find(id);
 
+                tempaddress = readdress;
                 try
                 {
 
-                    if (readdress != null)
+                    if (upadd.UnitNumber != "")
                     {
-                        readdress = upadd;
-                        db.Entry(readdress).State = System.Data.Entity.EntityState.Modified;
-                        db.SaveChanges();
-                      
+                        tempaddress.UnitNumber = upadd.UnitNumber;
                     }
+
+
+                    if (upadd.StreetName!="")
+                    {
+                        tempaddress.StreetName  = upadd.StreetName;
+                    }
+
+
+                    if (upadd.ComplexNumber != "")
+                    {
+                        tempaddress.ComplexNumber = upadd.ComplexNumber;
+                    }
+
+
+                    if (upadd.Addresstypes != null)
+                    {
+                        tempaddress.Addresstypes  = upadd.Addresstypes;
+                    }
+
+
+                    if (upadd.sub != null)
+                    {
+                        tempaddress.sub = upadd.sub;
+                    }
+            
+
+                    
+                    db.Entry(tempaddress).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
                     return "address was updated";
                 }
                 catch (Exception ex)
@@ -66,7 +95,7 @@ namespace DataBase_CodeFirst.Procedures
 
 
 
-        }
+           } 
         }
 
 

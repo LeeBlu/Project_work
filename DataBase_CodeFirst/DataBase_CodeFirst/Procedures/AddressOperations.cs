@@ -39,7 +39,7 @@ namespace DataBase_CodeFirst.Procedures
 
         }
 
-        public string UpdateAddress(int id, Address upadd)
+        public string UpdateAddress(int id, Address upadd,int? subID,int? typeId)
         {
             Address tempaddress = new Address();
 
@@ -69,20 +69,21 @@ namespace DataBase_CodeFirst.Procedures
                     }
 
 
-                    if (upadd.Addresstypes != null)
+                    if ( typeId != null)
                     {
-                        tempaddress.Addresstypes  = upadd.Addresstypes;
+                        var type = db.addresstypes.Where(s => s.AddressTypeID == typeId).FirstOrDefault();
+                        tempaddress.Addresstypes  = type;
                     }
 
 
-                    if (upadd.sub != null)
+                    if (subID != null)
                     {
-                        tempaddress.sub = upadd.sub;
-                    }
-                    if (upadd.SurbubID!=null)
-                    {
+                        var sub = db.surbubs.Where(s=>s.SurbubID==subID).FirstOrDefault();
 
+                        tempaddress.sub = sub;
                     }
+
+
 
             
 

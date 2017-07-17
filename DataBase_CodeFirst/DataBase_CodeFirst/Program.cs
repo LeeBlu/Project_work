@@ -25,7 +25,7 @@ namespace DataBase_CodeFirst
       
         static void Main(string[] args)
         {
-            int gid, depid,addtype,userid;
+            int gid, depid , addtype , userid , Subid;
 
             //Output Instructions for User 
             Console.WriteLine("Register ...press 1");
@@ -95,10 +95,13 @@ namespace DataBase_CodeFirst
             {
                 Console.WriteLine("Enter AdressId");
                 addr.AddressID = Convert.ToInt16(Console.ReadLine());
+
                 Console.WriteLine("Enter UnitNumber");
                 addr.UnitNumber = Console.ReadLine();
+
                 Console.WriteLine("Enter StreetName");
                 addr.StreetName = Console.ReadLine();
+
                 Console.WriteLine("Enter ComplexNumber");
                 addr.ComplexNumber = Console.ReadLine();
 
@@ -107,7 +110,11 @@ namespace DataBase_CodeFirst
 
                 Console.WriteLine("Enter address typeid..press 1 for physcal address.. press 2 for postal address");
                 addtype = Convert.ToInt16(Console.ReadLine());
-                Console.WriteLine(addressOps.UpdateAddress(addr.AddressID, addr));
+
+                Console.WriteLine("Enter Suburb ID");
+                Subid = Convert.ToInt16(Console.ReadLine());
+
+                Console.WriteLine(addressOps.UpdateAddress(addr.AddressID, addr,,addtype));
             }
             else if(op==5)
             {

@@ -114,7 +114,7 @@ namespace DataBase_CodeFirst
                 Console.WriteLine("Enter Suburb ID");
                 Subid = Convert.ToInt16(Console.ReadLine());
 
-                Console.WriteLine(addressOps.UpdateAddress(addr.AddressID, addr,,addtype));
+                Console.WriteLine(addressOps.UpdateAddress(addr.AddressID, addr, Subid, addtype));
             }
             else if(op==5)
             {

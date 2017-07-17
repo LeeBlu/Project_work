@@ -93,8 +93,8 @@ namespace DataBase_CodeFirst
             }
             else if (op==4)//Enter update address information
             {
-                Console.WriteLine("Enter userid");
-                userid = Convert.ToInt16(Console.ReadLine());
+                Console.WriteLine("Enter AdressId");
+                addr.AddressID = Convert.ToInt16(Console.ReadLine());
                 Console.WriteLine("Enter UnitNumber");
                 addr.UnitNumber = Console.ReadLine();
                 Console.WriteLine("Enter StreetName");
@@ -107,7 +107,7 @@ namespace DataBase_CodeFirst
 
                 Console.WriteLine("Enter address typeid..press 1 for physcal address.. press 2 for postal address");
                 addtype = Convert.ToInt16(Console.ReadLine());
-                Console.WriteLine(addressOps.UpdateAddress(userid,addr));
+                Console.WriteLine(addressOps.UpdateAddress(addr.AddressID, addr));
             }
             else if(op==5)
             {

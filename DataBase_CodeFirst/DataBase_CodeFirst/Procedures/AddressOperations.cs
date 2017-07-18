@@ -13,6 +13,7 @@ namespace DataBase_CodeFirst.Procedures
         public string InsertAddress(Address addres, int id, int addtype, int subid)
         {
             //RegisteredUser user = new RegisteredUser();
+        
             try
             {
                 using (var db = new TableContext())
@@ -23,7 +24,12 @@ namespace DataBase_CodeFirst.Procedures
                     var sub = db.surbubs.Find(subid);
                     addres.sub = sub;
                     addres.RegisteredUsers = person;
+                    
                     db.addresses.Add(addres);
+                    db.SaveChanges();
+
+                    person.AddressID=addres.AddressID;
+                    db.Entry(person).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
 
                 }

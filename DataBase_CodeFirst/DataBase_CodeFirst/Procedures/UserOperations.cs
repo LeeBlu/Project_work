@@ -111,6 +111,22 @@ namespace DataBase_CodeFirst.Procedures
             return "User was Deactivated";
         }
 
+        public string SoftDeleteUser(int id)
+        {
+
+            using (var db = new TableContext())
+            {
+                
+                var tempuser = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
+                //tempuser.IsDeleted=true;
+                tempuser.IsDeleted = true;
+                db.Entry(tempuser).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+            }
+            return "User was Deleted";
+        }
+
+
         public void UserInfo()
         {
             using (var db = new TableContext())

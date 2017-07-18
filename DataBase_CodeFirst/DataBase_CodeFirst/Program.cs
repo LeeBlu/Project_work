@@ -120,6 +120,11 @@ namespace DataBase_CodeFirst
             {
                 userOps.UserInfo();
             }
+            else if (op==6)
+            {
+
+                Console.WriteLine( userOps.SoftDeleteUser(3));
+            }
             Console.ReadKey();
             
         }

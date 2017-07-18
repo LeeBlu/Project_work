@@ -34,8 +34,6 @@ namespace DataBase_CodeFirst.Procedures
 
                 return ex.Message;
             }
-          
-
 
         }
 
@@ -83,11 +81,6 @@ namespace DataBase_CodeFirst.Procedures
                         tempaddress.sub = sub;
                     }
 
-
-
-            
-
-                    
                     db.Entry(tempaddress).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                     return "address was updated";
@@ -97,9 +90,6 @@ namespace DataBase_CodeFirst.Procedures
 
                     return ex.Message;
                 }
-               
-
-
 
            } 
         }

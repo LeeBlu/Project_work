@@ -50,7 +50,7 @@ namespace DataBase_CodeFirst.Procedures
                 var tempuser = db.Rusers.Where(s => s.RegisteredUserID == id).FirstOrDefault();
                 temp = tempuser ;
 
-                if (updateinfo.EmailAddress != "")
+                if (!string.IsNullOrEmpty(updateinfo.EmailAddress))
                 {
                     temp.EmailAddress = updateinfo.EmailAddress;
                 }
@@ -132,35 +132,37 @@ namespace DataBase_CodeFirst.Procedures
             using (var db = new TableContext())
 
             {
-                var UserInfomation = from us in db.Rusers
-                                     join b in db.addresses
-                                     on us.RegisteredUserID equals b.RegisteredUserID
-                                     join g in db.Genders on us.GenderID equals g.GenderID
-                                     join d in db.departments on us.DepartmentID equals d.DepartmentID
+                //var UserInfomation = from us in db.Rusers
+                //                     join b in db.addresses
+                //                     on us.RegisteredUserID equals b.RegisteredUserID
+                //                     join g in db.Genders on us.GenderID equals g.GenderID
+                //                     join d in db.departments on us.DepartmentID equals d.DepartmentID
 
-                                     select new
-                                     {
-                                         firstname = us.FirstName,
-                                         lastname = us.LastName,
-                                         strName = b.StreetName,
-                                         untNo = b.UnitNumber,
-                                         Sex = g.GenderDescription,
-                                         DepName = d.DepartmentName,
-                                         DepDesc = d.DepartmentDescrption
+                //                     select new
+                //                     {
+                //                         firstname = us.FirstName,
+                //                         lastname = us.LastName,
+                //                         strName = b.StreetName,
+                //                         untNo = b.UnitNumber,
+                //                         Sex = g.GenderDescription,
+                //                         DepName = d.DepartmentName,
+                //                         DepDesc = d.DepartmentDescrption
 
-                                     };
-                foreach (var item in UserInfomation)
-                {
-                    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}", item.firstname, item.lastname, item.strName, item.untNo, item.Sex, item.DepName, item.DepDesc);
+                //                     };
+                //foreach (var item in UserInfomation)
+                //{
+                //    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}", item.firstname, item.lastname, item.strName, item.untNo, item.Sex, item.DepName, item.DepDesc);
 
-                }
-                Console.ReadLine();
+                //}
+                //Console.ReadLine();
+
+                var temp = db.Rusers.Where(s => s.Status.StatusDesc == "UnActive");
             }
 
         }
-        
 
-    }
+     //   var obj = context.Profiles.Where(_ => _.ProfileID == 1).Select(_ => new { _.Addresses.First().StreetName, _.Department.DepartmentID })};
+}
 
  }
 

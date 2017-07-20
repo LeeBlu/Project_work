@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer_2.ContextFolder;
 using DataLayer_2.Model;
-using DataBase_CodeFirst.DTO;
+
 
 namespace DataBase_CodeFirst.Procedures
 {
@@ -57,18 +57,18 @@ namespace DataBase_CodeFirst.Procedures
                     temp.EmailAddress = updateinfo.EmailAddress;
                 }
 
-               if (updateinfo.FirstName!="")
+               if (!string.IsNullOrEmpty(updateinfo.FirstName))
                 {
                     temp.FirstName = updateinfo.FirstName;
                 }
 
-                if (updateinfo.LastName != "")
+                if (!string.IsNullOrEmpty(updateinfo.LastName))
                 {
                     temp.LastName = updateinfo.LastName;
                 }
     
 
-                if (updateinfo.Password!="")
+                if (!string.IsNullOrEmpty(updateinfo.Password))
                 {
                     temp.Password = updateinfo.Password;
                 }
@@ -134,9 +134,6 @@ namespace DataBase_CodeFirst.Procedures
             using (var db = new TableContext())
 
             {
-
-                
-
                 var temp = db.Rusers.Where(x => x.Status.StatusDesc == "UnActive").Select(y => new
                 {
                     y.FirstName,
@@ -151,13 +148,11 @@ namespace DataBase_CodeFirst.Procedures
                     y.Addresses.FirstOrDefault().sub.town.province.ProvinceName,
                     y.Addresses.FirstOrDefault().sub.town.province.country.CountryName
                 });
-
-
             }
 
         }
 
-}
+     }
 
  }
 

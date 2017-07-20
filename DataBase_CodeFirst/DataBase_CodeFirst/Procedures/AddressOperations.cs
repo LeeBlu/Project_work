@@ -12,7 +12,7 @@ namespace DataBase_CodeFirst.Procedures
     {
         public string InsertAddress(Address addres, int id, int addtype, int subid)
         {
-            //RegisteredUser user = new RegisteredUser();
+            
         
             try
             {
@@ -55,7 +55,7 @@ namespace DataBase_CodeFirst.Procedures
                 try
                 {
 
-                    if (upadd.UnitNumber != "")
+                    if (!string.IsNullOrEmpty(upadd.UnitNumber))
                     {
                         tempaddress.UnitNumber = upadd.UnitNumber;
                     }
@@ -67,7 +67,7 @@ namespace DataBase_CodeFirst.Procedures
                     }
 
 
-                    if (upadd.ComplexNumber != "")
+                    if (!string.IsNullOrEmpty(upadd.ComplexNumber))
                     {
                         tempaddress.ComplexNumber = upadd.ComplexNumber;
                     }

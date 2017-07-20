@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+//using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer_2.ContextFolder;
 using DataLayer_2.Model;
+using DataBase_CodeFirst.DTO;
 
 namespace DataBase_CodeFirst.Procedures
 {
@@ -132,37 +134,33 @@ namespace DataBase_CodeFirst.Procedures
             using (var db = new TableContext())
 
             {
-                //var UserInfomation = from us in db.Rusers
-                //                     join b in db.addresses
-                //                     on us.RegisteredUserID equals b.RegisteredUserID
-                //                     join g in db.Genders on us.GenderID equals g.GenderID
-                //                     join d in db.departments on us.DepartmentID equals d.DepartmentID
 
-                //                     select new
-                //                     {
-                //                         firstname = us.FirstName,
-                //                         lastname = us.LastName,
-                //                         strName = b.StreetName,
-                //                         untNo = b.UnitNumber,
-                //                         Sex = g.GenderDescription,
-                //                         DepName = d.DepartmentName,
-                //                         DepDesc = d.DepartmentDescrption
+                
 
-                //                     };
-                //foreach (var item in UserInfomation)
-                //{
-                //    Console.WriteLine("firstName {0} lastName{1} StreetName {2} UnitNo{3} GenderDec{4} DepName {5} DepDesc {6}", item.firstname, item.lastname, item.strName, item.untNo, item.Sex, item.DepName, item.DepDesc);
+                var temp = db.Rusers.Where(x => x.Status.StatusDesc == "UnActive").Select(y => new
+                {
+                    y.FirstName,
+                    y.LastName,
+                    y.EmailAddress,
+                    y.Gender.GenderDescription,
+                    y.Department.DepartmentName,
+                    y.Addresses.FirstOrDefault().ComplexNumber,
+                    y.Addresses.FirstOrDefault().StreetName,
+                    y.Addresses.FirstOrDefault().sub.SuburbName,
+                    y.Addresses.FirstOrDefault().sub.town.TownName,
+                    y.Addresses.FirstOrDefault().sub.town.province.ProvinceName,
+                    y.Addresses.FirstOrDefault().sub.town.province.country.CountryName
+                });
 
-                //}
-                //Console.ReadLine();
 
-                var temp = db.Rusers.Where(s => s.Status.StatusDesc == "UnActive");
             }
 
         }
 
-     //   var obj = context.Profiles.Where(_ => _.ProfileID == 1).Select(_ => new { _.Addresses.First().StreetName, _.Department.DepartmentID })};
 }
 
  }
 
+
+
+//var qry = objUsersDbContext.User.Where(x => x.IsApproved == false).Select(y => new { y.PkUserId, y.FirstName, y.MiddleName, y.LastName, y.Gender.GenderValue, y.Department.DepartmentName, y.PhysicalAddress.FirstOrDefault().StreetLine1, y.PhysicalAddress.FirstOrDefault().StreetLine2, y.PhysicalAddress.FirstOrDefault().StreetLine3 });
